@@ -1,14 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { User } from "./User";
-import Customer from "./Customer";
+import Anotheruser from "./Anotheruser";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <Customer />
-      <User />
+      <h1>JSX !</h1>
+      <Anotheruser />
     </div>
   );
 }
