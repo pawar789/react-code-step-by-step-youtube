@@ -1,13 +1,16 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Render from "./Render";
 import Student from "./Student";
 function App() {
-  const [data, setData] = useState("Aman");
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    alert("use effect");
+  });
   return (
     <div className="App">
-      <h1>{data}</h1>
-      <button onClick={() => setData("Pawar")}>Update Data</button>
+      <h1>useEffect in React: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Update Count</button>
     </div>
   );
 }
