@@ -1,24 +1,14 @@
 import "./App.css";
 import React, { useState } from "react";
-import Profile from "./Profile";
-import Login from "./Login";
-import Functionprops from "./Functionprop";
-import Members from "./Members";
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: "aman",
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Hello World</h1>
-      </div>
-    );
-  }
+import Render from "./Render";
+function App() {
+  const [name, setName] = useState("aman");
+  return (
+    <div>
+      <Render name={name} />
+      {/* <button onClick={() => setName("pawar")}>Update me</button> */}
+    </div>
+  );
 }
 
 export default App;
