@@ -1,25 +1,20 @@
 import "./App.css";
 import React, { useState } from "react";
 import Render from "./Render";
+import Student from "./Student";
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      count: 0,
+      show: false,
     };
-  }
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate", this.state.count);
-    if (this.state.count > 5 && this.state.count < 10) {
-      return true;
-    }
   }
   render() {
     return (
-      <div>
-        <h1>Should Component Update {this.state.count}</h1>
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          Update Count
+      <div className="App">
+        {this.state.show ? <Student /> : <h1>Child Component Removed</h1>}
+        <button onClick={() => this.setState({ show: !this.state.show })}>
+          Toggle Child Button
         </button>
       </div>
     );

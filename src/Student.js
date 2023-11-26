@@ -1,9 +1,14 @@
-function Student(props) {
-  // console.log(props);
-  return (
-    <div style={{ backgroundColor: "blue" }}>
-      <h1>Hello {props.name}</h1>
-    </div>
-  );
+import React from "react";
+class Student extends React.Component {
+  componentWillUnmount() {
+    alert("componentWillUnmount");
+  }
+  render() {
+    return (
+      <div>
+        <h1>Student Component</h1>
+      </div>
+    );
+  }
 }
 export default Student;
