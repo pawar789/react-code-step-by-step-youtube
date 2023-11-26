@@ -5,23 +5,22 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "aman",
+      count: 0,
     };
+    console.log("constructor");
   }
-  componentDidMount() {
-    console.log("componentDidMount");
+  componentDidUpdate(preProps, preState, snapshot) {
+    console.log("componentDidUpdate", preState.count, this.state.count);
+    if (preState.count === this.state.count) {
+      alert("data is already same");
+    }
   }
   render() {
-    console.log("render");
-    // this.setState({ name: "pawar" })
+    // console.log("render");
     return (
       <div>
-        <h1>
-          Component Did Mount <span>{this.state.name}</span>
-        </h1>
-        <button onClick={() => this.setState({ name: "pawar" })}>
-          Update Name
-        </button>
+        <h1>Component Did Update {this.state.count}</h1>
+        <button onClick={() => this.setState({ count: 1 })}>Update Name</button>
       </div>
     );
   }
