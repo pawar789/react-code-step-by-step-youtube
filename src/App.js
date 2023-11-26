@@ -2,15 +2,16 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import Render from "./Render";
 import Student from "./Student";
+import { User } from "./User";
 function App() {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    alert("use effect");
-  });
+  const [data, setData] = useState(10);
+  const [count, setCount] = useState(100);
+
   return (
     <div className="App">
-      <h1>useEffect in React: {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Update Count</button>
+      <User data={data} count={count} />
+      <button onClick={() => setCount(count + 1)}>Update count</button>
+      <button onClick={() => setData(data + 1)}>Update data</button>
     </div>
   );
 }
