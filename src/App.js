@@ -4,18 +4,21 @@ import Profile from "./Profile";
 import Login from "./Login";
 import Functionprops from "./Functionprop";
 import Members from "./Members";
-function App() {
-  function getData() {
-    console.log("hello");
-    alert("hello from app");
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: "aman",
+    };
   }
-  return (
-    <div className="App">
-      <h1>Pass Function as Props</h1>
-      <Functionprops data={getData} />
-      <Members data={getData} />
-    </div>
-  );
+
+  render() {
+    return (
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
