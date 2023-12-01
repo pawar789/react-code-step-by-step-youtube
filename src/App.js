@@ -5,46 +5,48 @@ import Student from "./Student";
 import { User } from "./User";
 import "./style.css";
 import style from "./custom.module.css";
-import { Button } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 function App() {
   // const student = ["Anil", "Sidhu", "Sam", "Peter"];
-  const students = [
+  const users = [
     {
       name: "anil",
       email: "anil@gmail.com",
-      contact: 888,
+      contact: "111",
     },
     {
       name: "sidhu",
       email: "sidhu@gmail.com",
-      contact: 1111,
+      contact: "1111",
     },
     {
       name: "peter",
       email: "peter@gmail.com",
-      contact: 2222,
+      contact: "222",
     },
   ];
 
   return (
     <div className="App">
-      <h1>Handle Array With List</h1>
-      <table border="1">
-        <tr>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Contact</td>
-        </tr>
-
-        {students.map((data) => (
+      <h1>List with Bootstrap table</h1>
+      <Table striped>
+        <tbody>
           <tr>
-            <td>{data.name}</td>
-            <td>{data.email}</td>
-            <td>{data.contact}</td>
-            <td></td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>contact</td>
           </tr>
-        ))}
-      </table>
+          {users.map((item, i) =>
+            item.contact === "111" ? (
+              <tr key={i}>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.contact}</td>
+              </tr>
+            ) : null
+          )}
+        </tbody>
+      </Table>
     </div>
   );
 }
