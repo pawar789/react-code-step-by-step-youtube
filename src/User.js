@@ -1,15 +1,11 @@
-import { useEffect } from "react";
-
-export function User(props) {
-  useEffect(() => {
-    alert("count is" + props.count);
-  }, [props.count]);
+function User(props) {
+  const data = "Anil Sidhu";
   return (
     <div>
-      <h1>Count props: {props.count}</h1>
-      <h1>Data props: {props.data}</h1>
+      <h2>User Component: {props.name}</h2>
+      <button onClick={() => props.alert(data)}>Click Me</button>
     </div>
   );
 }
 
-// export default User;
+export default User;
